@@ -76,4 +76,4 @@
 
 # p Product.names
 
-
+puts "Hello".rainbow
