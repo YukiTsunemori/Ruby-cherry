@@ -52,28 +52,38 @@
 # Product.names_without_foo
 # p Product::SOME_NAMES
 
-# class Product
-#     SOME_NAMES = ['foo', 'bar', 'hoge'].freeze
 
-#     def self.names(names = SOME_NAMES)
-#         # selfキーワードは、引数にクラスで定義した定数を呼び出す際に必要。
-#         # => クラスメソッドでクラス自身を呼び出している？
-#         # names.delete('foo')
-#         p names
-#     end
-# end
 
-# p Product.names
+
+
+
+class Product
+    SOME_NAMES = ['2025.FEB.14 is valentine`s day'].freeze
+
+    def self.names(names = SOME_NAMES)
+        # selfキーワードは、引数にクラスで定義した定数を呼び出す際に必要。
+        # => クラスメソッドでクラス自身を呼び出している？
+        # names.delete('foo')
+        names
+    end
+end
+
+p Product.names
 # p Product::SOME_NAMES
 
+
+
+
+
+
 # class Product
-#     SOME_NAMES = ['foo', 'bar', 'baz'].freeze
+#     SOME_NAMES = ['foo', 'bar', 'baz']
 
 #     def self.names(name=SOME_NAMES)
-#         name.delete
+#         names
 #     end
 # end
 
 # p Product.names
 
-puts "Hello".rainbow
+
