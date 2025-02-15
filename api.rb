@@ -32,25 +32,41 @@
 # p AwesomeApi.base_url
 # p AwesomeApi.debug_mode
 
-module Greetable
-    def hello
-        'hello'
+# module Greetable
+#     def hello
+#         'hello'
+#     end
+# end
+
+# module Aisatsu
+#     include Greetable
+#     def konnnitiha
+#         'こんにちは'
+#     end
+# end
+
+# class User
+#     include Aisatsu
+# end
+
+# user = User.new 
+# p user.hello
+# p user.konnnitiha
+
+# p User.ancestors
+
+module A
+    def to_s
+        "<A> #{super}"
     end
 end
 
-module Aisatsu
-    include Greetable
-    def konnnitiha
-        'こんにちは'
+class Product
+include A 
+    def to_s
+        "<Product> #{super}"
     end
 end
 
-class User
-    include Aisatsu
-end
-
-user = User.new 
-p user.hello
-p user.konnnitiha
-
-p User.ancestors
+product = Product.new 
+p product.to_s
